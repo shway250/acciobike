@@ -1,7 +1,12 @@
 class UserController < ApplicationController
+
+  def new
+    @user = User.new
+  end
+
   def create
     User.create(user_params)
-    redirect_to users_path
+    redirect_to user_path
   end
 
   def destroy
@@ -11,13 +16,11 @@ class UserController < ApplicationController
   end
 
   def index
-  end
 
-  def new
-    @users = User.new
   end
 
   def show
+    @user = User.find(params[:id]) #This works!
   end
 
   def update
