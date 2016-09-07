@@ -1,14 +1,4 @@
 class SessionsController < ApplicationController
-  def signup
-    @user = User.new
-
-  end
-
-  def newUser
-    User.create()
-    redirect_to root_path
-  end
-
   def new
   end
 
@@ -34,6 +24,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:email, :password)
   end
 end
