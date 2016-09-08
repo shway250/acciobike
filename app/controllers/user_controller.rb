@@ -6,7 +6,7 @@ class UserController < ApplicationController
 
   def create
     User.create(user_params)
-    redirect_to user_path
+    redirect_to root_path
   end
 
   def destroy
@@ -16,7 +16,7 @@ class UserController < ApplicationController
   end
 
   def index
-
+    @users = User.all
   end
 
   def show
